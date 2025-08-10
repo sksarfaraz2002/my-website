@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- =================================================================== -->
+    <!-- EDIT THIS: The title that appears in the browser tab. -->
+    <!-- =================================================================== -->
+    <title>Saarthi AI - Smart & Affordable Solutions for Small Businesses</title>
+    
+    <!-- These are scripts that add styling and icons. No need to edit these. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- =================================================================== -->
+    <!-- WEBSITE STYLES: This controls the colors and fonts. -->
+    <!-- You can change the color codes here to change the entire site's theme. -->
+    <!-- =================================================================== -->
+    <style>
+        :root {
+            --brand-light: #FCF5E7; /* Cream Background */
+            --brand-dark: #05244A;  /* Dark Navy Blue */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-light);
+            color: #1e293b;
+        }
+        .hero-section {
+            background-color: var(--brand-dark);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .text-brand-dark { color: var(--brand-dark); }
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .hover\:text-brand-dark:hover { color: var(--brand-dark); }
+        .focus\:ring-brand-dark:focus {
+            box-shadow: 0 0 0 2px var(--brand-dark);
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body x-data="{ mobileMenuOpen: false }">
+
+    <!-- =================================================================== -->
+    <!-- HEADER SECTION: This is the navigation bar at the top. -->
+    <!-- =================================================================== -->
+    <header class="bg-white/80 backdrop-blur-lg fixed w-full z-50 top-0 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- YOUR LOGO AND COMPANY NAME -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="bg-brand-dark rounded-lg flex items-center justify-center p-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6">
+                            <path d="M17 3.5C14.3841 3.5 12.0333 4.88484 10.5 6.83333C8.96667 8.78182 8.5 11.2182 9.5 13.5C10.5 15.7818 12.5 17.5 15 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 20.5C9.61594 20.5 11.9667 19.1152 13.5 17.1667C15.0333 15.2182 15.5 12.7818 14.5 10.5C13.5 8.21818 11.5 6.5 9 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <!-- EDIT THIS: Your company name -->
+                    <span class="text-2xl font-bold text-slate-800">Saarthi AI</span>
+                </a>
+
+                <!-- NAVIGATION LINKS -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-600 font-medium hover:text-brand-dark">Services</a>
+                    <a href="#case-study" class="text-slate-600 font-medium hover:text-brand-dark">Case Study</a>
+                    <a href="#why-us" class="text-slate-600 font-medium hover:text-brand-dark">Why Us</a>
+                    <a href="#contact" class="text-slate-600 font-medium hover:text-brand-dark">Contact</a>
+                </nav>
+
+                <!-- "GET A QUOTE" BUTTON -->
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden sm:inline-block bg-brand-dark text-white font-semibold px-5 py-2.5 rounded-lg cta-button">
+                        Get a Free Quote
+                    </a>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================== -->
+        <!-- HERO SECTION: The main welcome area at the top of the page. -->
+        <!-- =================================================================== -->
+        <section class="pt-32 pb-20 md:pt-40 md:pb-28 hero-section">
+            <div class="container mx-auto px-6 text-center">
+                <!-- EDIT THIS: The main headline -->
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Empowering India's Small Businesses with 
+                    <span style="color: #FCF5E7;">Smart, Affordable Technology.</span>
+                </h1>
+                <!-- EDIT THIS: The paragraph below the headline -->
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
+                    From custom management apps to AI-powered websites, we build the tools you need to succeed in the digital age, at a price you can afford.
+                </p>
+                <!-- These are the main buttons -->
+                <div class="flex justify-center items-center space-x-4">
+                    <a href="#contact" class="text-brand-dark font-bold px-8 py-4 rounded-lg cta-button text-lg" style="background-color: #FCF5E7;">
+                        Discuss Your Project
+                    </a>
+                    <a href="#services" class="bg-transparent text-white font-bold px-8 py-4 rounded-lg cta-button text-lg border-2 border-slate-400">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PROBLEM SECTION: Explains the customer's pain points. -->
+        <!-- =================================================================== -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <!-- EDIT THIS: The headline and sub-headline for this section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Stop Managing, Start Growing</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-slate-500 mt-4">
+                        Are you tangled in spreadsheets and manual tasks? We free you to focus on what truly matters: your business.
+                    </p>
+                </div>
+                <!-- EDIT THIS: You can change the text for each of the three problems -->
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 bg-white border border-slate-200 rounded-xl">
+                        <div class="mx-auto bg-amber-100 text-amber-600 h-16 w-16 rounded-full flex items-center justify-center mb-4"><i data-lucide="clock" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Wasted Time & Effort</h3>
+                        <p class="text-slate-500">Manual data entry, repetitive calculations, and chasing payments consume your valuable time.</p>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-200 rounded-xl">
+                        <div class="mx-auto bg-rose-100 text-rose-600 h-16 w-16 rounded-full flex items-center justify-center mb-4"><i data-lucide="bar-chart-big" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">No Clear Insights</h3>
+                        <p class="text-slate-500">Google Sheets can't show you trends, predict sales, or give you the business intelligence you need.</p>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-200 rounded-xl">
+                        <div class="mx-auto bg-cyan-100 text-cyan-600 h-16 w-16 rounded-full flex items-center justify-center mb-4"><i data-lucide="frown" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Poor Customer Experience</h3>
+                        <p class="text-slate-500">Lack of professional tools for bookings, communication, and support can turn customers away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- SERVICES SECTION: Explains what you offer. -->
+        <!-- =================================================================== -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <!-- EDIT THIS: The headline and sub-headline for this section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Our Solutions, Tailored For You</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-slate-500 mt-4">
+                        We don't sell one-size-fits-all software. We build exactly what your business needs to thrive.
+                    </p>
+                </div>
+                <!-- EDIT THIS: You can change the text for each of your three main services -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="rounded-xl p-8 feature-card border border-slate-200">
+                        <div class="bg-blue-100 text-blue-800 h-16 w-16 rounded-full flex items-center justify-center mb-6"><i data-lucide="layout-dashboard" class="h-8 w-8"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Custom Business Apps</h3>
+                        <p class="text-slate-500 mb-4">From PG management to inventory control, we build simple, powerful apps to automate your daily operations.</p>
+                        <a href="#contact" class="font-semibold text-brand-dark hover:underline">Learn More &rarr;</a>
+                    </div>
+                    <div class="rounded-xl p-8 feature-card border border-slate-200">
+                        <div class="bg-blue-100 text-blue-800 h-16 w-16 rounded-full flex items-center justify-center mb-6"><i data-lucide="bot" class="h-8 w-8"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">AI-Powered Websites</h3>
+                        <p class="text-slate-500 mb-4">Get a professional, mobile-friendly website with a 24/7 AI assistant to answer questions and capture leads.</p>
+                        <a href="#contact" class="font-semibold text-brand-dark hover:underline">Learn More &rarr;</a>
+                    </div>
+                    <div class="rounded-xl p-8 feature-card border border-slate-200">
+                        <div class="bg-blue-100 text-blue-800 h-16 w-16 rounded-full flex items-center justify-center mb-6"><i data-lucide="database-zap" class="h-8 w-8"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Data & Dashboard Services</h3>
+                        <p class="text-slate-500 mb-4">We turn your messy spreadsheets into clean, interactive dashboards that reveal powerful business insights.</p>
+                        <a href="#contact" class="font-semibold text-brand-dark hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- CASE STUDY SECTION: Your success story. -->
+        <!-- =================================================================== -->
+        <section id="case-study" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Real Results for Real Businesses</h2>
+                </div>
+                <div class="bg-brand-dark rounded-2xl p-8 md:p-12 text-white">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <!-- EDIT THIS: The text for your case study -->
+                            <span class="text-sm font-bold bg-white/10 text-white py-1 px-3 rounded-full mb-4 inline-block">CASE STUDY: HOSTEL MANAGEMENT</span>
+                            <h3 class="text-3xl font-bold mb-4">From Chaos to Control: A PG Owner's Story</h3>
+                            <p class="text-slate-300 mb-6">A local PG owner in Hyderabad was struggling with Google Sheets to manage 50+ tenants. We built him a simple app that automated rent reminders, tracked expenses, and provided a clear dashboard of vacancies and profits.</p>
+                            <div class="border-l-4 border-slate-500 pl-6">
+                                <blockquote class="text-xl italic">
+                                    "This app saved me over 10 hours a week. I can finally focus on expanding my business instead of chasing payments. Saarthi AI understood my exact needs."
+                                </blockquote>
+                                <p class="mt-4 font-semibold">- Hostel Owner, Hyderabad</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 md:mt-0">
+                            <!-- You can change the placeholder image URL here if you have a real one -->
+                            <img src="https://placehold.co/600x400/FCF5E7/05244A?text=PG+App+Dashboard" alt="PG Management App Dashboard" class="rounded-xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- CONTACT SECTION: Your contact form and details. -->
+        <!-- =================================================================== -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-brand-dark rounded-2xl p-8 md:p-16">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="text-white">
+                            <h2 class="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+                            <p class="text-slate-300 text-lg mb-8">Let's have a no-pressure chat about your needs. We'll give you a clear, honest quote and a plan to help your business succeed. Our first consultation is always free.</p>
+                            <!-- EDIT THIS: Your contact information -->
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="mail" class="h-6 w-6 text-slate-400"></i>
+                                    <span class="text-lg">hello@saarthiai.com</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="phone" class="h-6 w-6 text-slate-400"></i>
+                                    <span class="text-lg">+91 98765 43210</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i data-lucide="map-pin" class="h-6 w-6 text-slate-400"></i>
+                                    <span class="text-lg">Hyderabad, Telangana, India</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- This is the contact form -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h3>
+                            <form action="#" method="POST" class="space-y-6">
+                                <div>
+                                    <label for="name" class="font-medium text-slate-700">Full Name</label>
+                                    <input type="text" id="name" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Name">
+                                </div>
+                                <div>
+                                    <label for="business" class="font-medium text-slate-700">Business Name</label>
+                                    <input type="text" id="business" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Company">
+                                </div>
+                                <div>
+                                    <label for="phone" class="font-medium text-slate-700">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Contact Number">
+                                </div>
+                                <div>
+                                    <label for="message" class="font-medium text-slate-700">How can we help?</label>
+                                    <textarea id="message" rows="4" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Tell us about your project or problem..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-brand-dark text-white font-bold py-3 px-6 rounded-lg cta-button">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER SECTION: The bottom of the page. -->
+    <!-- =================================================================== -->
+    <footer class="bg-brand-dark text-slate-400">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <p>&copy; 2025 Saarthi AI. All Rights Reserved.</p>
+                <p class="text-sm mt-2">Designed to help Indian businesses rise.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for interactivity, no need to edit -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
