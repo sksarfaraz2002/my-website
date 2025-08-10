@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
     
     <!-- =================================================================== -->
     <!-- WEBSITE STYLES: This controls the colors and fonts. -->
-    <!-- You can change the color codes here to change the entire site's theme. -->
     <!-- =================================================================== -->
     <style>
         :root {
@@ -64,18 +64,18 @@
     <!-- HEADER SECTION: This is the navigation bar at the top. -->
     <!-- =================================================================== -->
     <header class="bg-white/80 backdrop-blur-lg fixed w-full z-50 top-0 border-b border-slate-200">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
             <div class="flex items-center justify-between">
                 <!-- YOUR LOGO AND COMPANY NAME -->
-                <a href="#" class="flex items-center space-x-3">
+                <a href="#" class="flex items-center space-x-2">
                     <div class="bg-brand-dark rounded-lg flex items-center justify-center p-2">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white h-5 w-5 sm:h-6 sm:w-6">
                             <path d="M17 3.5C14.3841 3.5 12.0333 4.88484 10.5 6.83333C8.96667 8.78182 8.5 11.2182 9.5 13.5C10.5 15.7818 12.5 17.5 15 18.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M7 20.5C9.61594 20.5 11.9667 19.1152 13.5 17.1667C15.0333 15.2182 15.5 12.7818 14.5 10.5C13.5 8.21818 11.5 6.5 9 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <!-- EDIT THIS: Your company name -->
-                    <span class="text-2xl font-bold text-slate-800">Saarthi AI</span>
+                    <span class="text-lg sm:text-xl font-bold text-slate-800">Saarthi AI</span>
                 </a>
 
                 <!-- NAVIGATION LINKS -->
@@ -86,16 +86,27 @@
                     <a href="#contact" class="text-slate-600 font-medium hover:text-brand-dark">Contact</a>
                 </nav>
 
-                <!-- "GET A QUOTE" BUTTON -->
-                <div class="flex items-center space-x-4">
-                    <a href="#contact" class="hidden sm:inline-block bg-brand-dark text-white font-semibold px-5 py-2.5 rounded-lg cta-button">
-                        Get a Free Quote
+                <!-- "GET A QUOTE" BUTTON & MOBILE MENU BUTTON -->
+                <div class="flex items-center space-x-2">
+                    <a href="#contact" class="hidden sm:inline-block bg-brand-dark text-white font-semibold px-4 py-2 rounded-lg cta-button text-sm">
+                        Get Quote
                     </a>
                     <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100">
                         <i data-lucide="menu" class="h-6 w-6"></i>
                     </button>
                 </div>
             </div>
+        </div>
+        <!-- =================================================================== -->
+        <!-- MOBILE MENU: This menu appears when the hamburger icon is clicked. -->
+        <!-- =================================================================== -->
+        <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" class="md:hidden bg-white border-t border-slate-200">
+            <nav class="flex flex-col space-y-1 p-4">
+                <a href="#services" @click="mobileMenuOpen = false" class="block px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-brand-dark font-medium">Services</a>
+                <a href="#case-study" @click="mobileMenuOpen = false" class="block px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-brand-dark font-medium">Case Study</a>
+                <a href="#why-us" @click="mobileMenuOpen = false" class="block px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-brand-dark font-medium">Why Us</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="block px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-brand-dark font-medium">Contact</a>
+            </nav>
         </div>
     </header>
 
@@ -106,20 +117,20 @@
         <section class="pt-32 pb-20 md:pt-40 md:pb-28 hero-section">
             <div class="container mx-auto px-6 text-center">
                 <!-- EDIT THIS: The main headline -->
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-                    Empowering India's Small Businesses with 
-                    <span style="color: #FCF5E7;">Smart, Affordable Technology.</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+                    Empowering Small Businesses with 
+                    <span style="color: #FCF5E7;">Smart, Affordable Tech.</span>
                 </h1>
                 <!-- EDIT THIS: The paragraph below the headline -->
-                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
-                    From custom management apps to AI-powered websites, we build the tools you need to succeed in the digital age, at a price you can afford.
+                <p class="max-w-3xl mx-auto text-base md:text-xl text-slate-300 mb-10">
+                    From custom apps to AI-powered websites, we build the tools you need to succeed in the digital age, at a price you can afford.
                 </p>
                 <!-- These are the main buttons -->
-                <div class="flex justify-center items-center space-x-4">
-                    <a href="#contact" class="text-brand-dark font-bold px-8 py-4 rounded-lg cta-button text-lg" style="background-color: #FCF5E7;">
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="w-full sm:w-auto text-brand-dark font-bold px-8 py-3 rounded-lg cta-button text-base" style="background-color: #FCF5E7;">
                         Discuss Your Project
                     </a>
-                    <a href="#services" class="bg-transparent text-white font-bold px-8 py-4 rounded-lg cta-button text-lg border-2 border-slate-400">
+                    <a href="#services" class="w-full sm:w-auto bg-transparent text-white font-bold px-8 py-3 rounded-lg cta-button text-base border-2 border-slate-400">
                         Explore Services
                     </a>
                 </div>
@@ -234,17 +245,18 @@
                 <div class="bg-brand-dark rounded-2xl p-8 md:p-16">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="text-white">
-                            <h2 class="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
                             <p class="text-slate-300 text-lg mb-8">Let's have a no-pressure chat about your needs. We'll give you a clear, honest quote and a plan to help your business succeed. Our first consultation is always free.</p>
                             <!-- EDIT THIS: Your contact information -->
                             <div class="space-y-4">
                                 <div class="flex items-center space-x-4">
                                     <i data-lucide="mail" class="h-6 w-6 text-slate-400"></i>
-                                    <span class="text-lg">hello@saarthiai.com</span>
+                                    <span class="text-lg">hellosaarthiai@gmail.com</span>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <i data-lucide="phone" class="h-6 w-6 text-slate-400"></i>
-                                    <span class="text-lg">+91 98765 43210</span>
+                                    <!-- This is the updated phone number -->
+                                    <span class="text-lg">+91 77801 15957</span>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <i data-lucide="map-pin" class="h-6 w-6 text-slate-400"></i>
