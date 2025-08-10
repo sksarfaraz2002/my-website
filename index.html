@@ -267,22 +267,24 @@
                         <!-- This is the contact form -->
                         <div class="bg-white p-8 rounded-xl shadow-lg">
                             <h3 class="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h3>
-                            <form action="#" method="POST" class="space-y-6">
+                            <!-- THIS FORM IS NOW CONFIGURED FOR NETLIFY -->
+                            <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                                <input type="hidden" name="form-name" value="contact" />
                                 <div>
                                     <label for="name" class="font-medium text-slate-700">Full Name</label>
-                                    <input type="text" id="name" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Name">
+                                    <input type="text" id="name" name="name" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Name">
                                 </div>
                                 <div>
                                     <label for="business" class="font-medium text-slate-700">Business Name</label>
-                                    <input type="text" id="business" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Company">
+                                    <input type="text" id="business" name="business" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Company">
                                 </div>
                                 <div>
                                     <label for="phone" class="font-medium text-slate-700">Phone Number</label>
-                                    <input type="tel" id="phone" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Contact Number">
+                                    <input type="tel" id="phone" name="phone" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Your Contact Number">
                                 </div>
                                 <div>
                                     <label for="message" class="font-medium text-slate-700">How can we help?</label>
-                                    <textarea id="message" rows="4" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Tell us about your project or problem..."></textarea>
+                                    <textarea id="message" name="message" rows="4" class="w-full mt-2 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-dark" placeholder="Tell us about your project or problem..."></textarea>
                                 </div>
                                 <button type="submit" class="w-full bg-brand-dark text-white font-bold py-3 px-6 rounded-lg cta-button">
                                     Send Message
